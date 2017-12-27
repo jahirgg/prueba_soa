@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Log-in</title>
+
+  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/login.css?v=1">
+
+</head>
+
+<body>
+
+  <div class="login-card">
+    <h1>Log-in</h1><br>
+  <form method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    {{ form.username }}
+    {{ form.password }}
+    <input type="submit" name="login" class="login login-submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+
+  <div class="login-help">
+      {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+      
+      {% if next %}
+          {% if user.is_authenticated %}
+          <p>Your account doesn't have access to this page. To proceed,
+          please login with an account that has access.</p>
+          {% else %}
+          <p>Please login to see this page.</p>
+          {% endif %}
+      {% endif %}
+  </div>
+</div>
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+</body>
+
+</html>
+{% endblock %}

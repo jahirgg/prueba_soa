@@ -1,0 +1,117 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prueba Banistmo </title>
+<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="/static/css/theme/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/theme/flexslider.css">
+<link rel="stylesheet" href="/static/css/theme/main.css?v=2">
+<link rel="stylesheet" href="/static/css/theme/responsive.css">
+<link rel="stylesheet" href="/static/css/theme/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/theme/jquery.flexslider-min.js?v=1" charset="utf-8"></script>
+
+<style>
+
+
+</style>
+</head>
+
+<body>
+    <main>
+        <!-- Header Section -->
+        <section class="tophead" role="tophead"> 
+        <!-- Navigation Section -->
+        <header id="header">
+          <div class="header-content clearfix"> <a class="logo" href="#">PRUEBA BANISTMO</a>
+            <nav class="navigation" role="navigation">
+              <ul class="primary-nav">          
+                    <LI><a href="{% url 'accounts:logout' %}">Salir</a></LI>
+              </ul>
+            </nav>
+            <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+        </header>
+        <!-- Navigation Section --> 
+      </section>
+      <!-- Header Section --> 
+      <section id="header-slider" class="section">
+        
+      </section>
+{% block content %}
+{% if user.is_authenticated %}
+     
+
+  <!-- Service Section --> 
+  <section class="section services" >
+        <div class="chart_container" align="center">
+                <table class="chart_title">
+                    <thead>
+                        <tr>
+                            <td colspan="4"> 
+                                DETALLE DE TRANSACCIONES
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>     
+                                                     
+                                        <form name="myform" onSubmit="return handleClick()">
+                                            <input name="Submit"  type="submit" value="Buscar Cliente" >
+                                            <input type="text" id="myVal">
+                                        </form>                        
+                            </td>
+                            <td>                                           
+                                
+                                <input type="checkbox" class="check" value="neto">
+                                Mostrar Flujo de Caja Neto
+                            </td>
+                            <td>
+                                    <input name="smaButton" class="button"
+                                    type="button" 
+                                    value="Mostrar Media Móvil" 
+                                    onclick="showMovingAverage()" />
+                            </td>
+                            <td>
+                                    <div class="alert" style="visibility: hidden">
+                                            <span class="closebtn" onclick="hideAlert()">&times;</span>
+                                            Media Móvil Calculada
+                                    </div>  
+                            </td>
+                        </tr>  
+                       
+                    </tbody>
+                    
+                </table>
+                
+            </div>
+        <br>
+        <br>
+        <script type='text/javascript' src='/static/js/visualize.js'></script>    
+  </section>
+  <!-- footer section -->
+  
+{% else %}
+    <p><a href="{% url 'accounts:logout' %}">logout</a></p>
+{% endif %}
+<!-- JS FILES --> 
+<script src="/static/js/jquery-3.2.1.min.js"></script> 
+<script src="/static/js/theme/bootstrap.min.js"></script> 
+<script src="/static/js/theme/jquery.flexslider-min.js"></script> 
+<script src="/static/js/theme/retina.min.js"></script> 
+<script src="/static/js/theme/modernizr.js"></script> 
+<script src="/static/js/theme/main.js"></script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,186 @@
+.transaction_list { 
+    margin: auto; 
+    padding: 40px;
+    max-width: 800px;
+    width:100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  
+  .transaction_list thead {
+    background:rgb(64,64,64);
+    font-weight: 900;
+    color: #ffffff;  
+    text-align: right;
+  }
+  
+  .transaction_list tbody tr:nth-of-type(odd){
+    background: rgb(155,155,155);
+  }
+  
+  .transaction_list tbody tr:nth-of-type(odd){
+    background: rgb(255,255,255);
+  }
+  
+  .transaction_list thead td{
+    text-align: center;
+  }
+  
+  .transaction_list tbody td:nth-child(1){
+    text-align: center;
+  }
+  
+  .transaction_list tbody td:nth-child(2){
+    text-align: center;
+  }
+  
+  .transaction_list tbody td:nth-child(3){
+    text-align: center;
+  }
+  
+  .transaction_list tbody td:nth-child(4){
+    text-align: right;
+  }
+  
+  
+  svg {
+      font: 10px sans-serif;
+      shape-rendering: crispEdges;
+      align-self: center;
+      background: white;
+    }
+  
+  .bar.total rect {
+    fill: steelblue;
+  }
+  
+  .bar.positive rect {
+    fill: rgb(86,172,104);
+  }
+  .bar.negative rect {
+    fill: rgb(218,106,90);
+  }
+  
+  .bar line.connector {
+    stroke: grey;
+    stroke-dasharray: 3;
+  }
+  
+  .bar text {
+    fill: white;
+    font: 12px sans-serif;
+    text-anchor: middle;
+  }
+  
+  .xaxis text,
+  .yaxis text {
+    font: 10px sans-serif;
+  }
+  
+  .xaxis path,
+  .yaxis path,
+  .xaxis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  
+  .yaxis line {
+    fill: none;
+    stroke: lightgrey;
+    shape-rendering: crispEdges;
+  }
+  
+  .origin line {
+    stroke: #000000;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+  }
+  
+  div.tooltip {	
+      position: absolute;			
+      text-align: center;			
+      width: 90px;					
+      height: 30px;					
+      padding: 2px;				
+      font: 12px sans-serif;
+      color: white;		
+      background: #337ab7;	
+      border: 0px;		
+      border-radius: 8px;			
+      pointer-events: none;			
+  }
+  
+  div.tooltip_line {	
+      position: absolute;			
+      text-align: center;			
+      width: 90px;					
+      height: 30px;					
+      padding: 2px;				
+      font: 12px sans-serif;
+      color: white;		
+      background: rgb(115,182,102);	
+      border: 0px;		
+      border-radius: 8px;			
+      pointer-events: none;			
+  }
+  
+  .chart_title {
+      
+      border-collapse: separate;
+      border-spacing: 10px 0;
+      border:1px;
+  }
+  
+  .chart_title thead{
+      font-size: 17px;
+      color: #000;
+      font-weight: 700;
+      float: left;
+      text-transform: uppercase;
+      float: none;
+      text-align: center;
+  
+  
+  }
+  
+  .chart_title td{
+      padding: 10px 0;    
+  }
+  
+  
+  circle{
+      fill: steelblue;
+  }
+  
+  .line { 
+      stroke: steelblue;
+      stroke-width: 2;
+      fill: none;
+  }
+  
+  /* The alert message box */
+  .alert {
+      padding: 5px;
+      background-color: rgb(97,165,239); /* Red */
+      color: white;
+      margin-bottom: 0px
+  }
+  
+  /* The close button */
+  .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+      color: black;
+  }

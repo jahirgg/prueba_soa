@@ -1,0 +1,103 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'accounts:logout' %}">logout</a></p>
+{% else %}
+    
+<!-- Header Section -->
+<section class="tophead" role="tophead"> 
+    <!-- Navigation Section -->
+    <header id="header">
+      <div class="header-content clearfix"> <a class="logo" href="#">PRUEBA BANISTMO</a>
+        <nav class="navigation" role="navigation">
+          <ul class="primary-nav">          
+            
+            <LI><a href="{% url 'accounts:login' %}">Log-in</a></LI>
+          </ul>
+        </nav>
+        <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+    </header>
+    <!-- Navigation Section --> 
+  </section>
+  <!-- Header Section --> 
+  <section id="header-slider" class="section">
+  
+  </section>
+  <!-- Service Section -->
+  <section id="services" class="section services">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="services-content">
+            <h4>¡Bienvenido!</h4>
+            <p>Este es un servicio que te permitira obtener 
+              información transaccional de tus clientes de manera fácil y detallada.</p>
+            <p>Podrás visualizar de rápidamente cuáles han sido 
+              las transacciones de cada cliente y enteder su 
+              comportamiento a través de los meses</p>  
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="services-content">
+            <h5>Características</h5>
+            <ul>
+               
+              <li><a href="#">Gráficos Interactivos</a></li>
+              <li><a href="#">Listado Transaccional</a></li>
+              <li><a href="#">Cálculo de Media Móvil</a></li>
+              <li><a href="#">Autenticación de Usuarios</a></li>
+                          
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="services-content">
+            <h5>Tecnologías</h5>
+            <ul>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">Django</a></li>
+              <li><a href="#">Django REST Framework</a></li>
+              <li><a href="#">D3js</a></li>
+              <li><a href="#">jQuery</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Service Section --> 
+  
+  <!-- footer section -->
+  <footer id="contact" class="footer">
+    <div class="container-fluid">
+      <div class="col-md-2 left">
+        <h4>Dirección</h4>
+        <p> Calle 73, San Francisco.</p>
+      </div>
+      <div class="col-md-2 left">
+        <h4>Contacto</h4>
+        <p> Jahir González <br>Cel: +507-6229-4141 <br>
+          Email : <a href="mailto:jago27@hotmail.com"> jago27@hotmail.com </a></p>
+      </div>
+      <div class="col-md-2 left">
+        <h4>Social presense</h4>
+        <ul class="footer-share">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-6 right">
+         </div>
+    </div>
+  </footer>
+  <!-- footer section --> 
+{% endif %}
+{% endblock %}
